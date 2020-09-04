@@ -1,0 +1,191 @@
+*{
+    /* el border-box hace que los valores de height y width incluyan al padding, content y border 
+    mientras que content-box solo afecta al contents excluyendo al padding y al border.*/
+    box-sizing: border-box;
+}
+
+body{
+    font-family: sans-serif;
+    background-color: rgb(206, 200, 200);
+}
+
+.container{
+    
+    width: 90%;
+    margin: auto;
+    padding: 40px;
+}
+
+.formulario{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* el gap se utiliza para marcar las distancias entre columnas y filas */
+    gap: 20px;
+}
+
+.formulario__grupo{
+    width: 100%;
+}
+
+.formulario__label{
+    display: block;
+    font-weight: 700;
+    padding: 10px;
+    /* se le pone pointer porque el label contiene un input y al clikearlo se activa el focus del input.  */
+    cursor: pointer;
+}
+
+.formulario__grupo--input{
+    position: relative;
+}
+
+.formulario__input{
+    width: 100%;
+    background-color: white;
+    border: 3px solid transparent;
+    border-radius: 3px;
+    height: 45px;
+    /* line height es la alineacion del input al escribir */
+    line-height: 45px;
+    padding: 0 40px 0 10px;
+    transition: .3s ease all;
+}
+
+.formulario__input:focus{
+    border: 3px solid rgb(47, 92, 216);
+    /* el outline es el contorno dentro de los bordes y lo elimino para que no me aparezce cuando hago focus en el input  */
+    outline: none;
+    box-shadow: 3px 0 30px rgba(163,163,163,0.4);
+}
+
+.formulario__input-error{
+    font-size: 12px;
+    margin-bottom: 0;
+    display: none;
+}
+
+.formulario__input-error-activo{
+    display: block;
+}
+
+.formulario__validacion-estado{
+    position: absolute;
+    right: 10px;
+    bottom: 15px;
+    z-index: 1000;
+    font-size: 16px;
+    opacity: 0;
+
+}
+
+.formulario__checkbox{
+    margin-right: 10px;
+}
+
+.formulario__terminos{
+    display: grid;
+    justify-content: center;
+    align-items: flex-end;
+}
+
+.formulario__grupo-terminos,
+.formulario__mensaje,
+.formulario__grupo-btn-enviar{
+    /* el grid column: span 2 quiero decirle que esta columna equivalga a 2 columnas. */
+    grid-column: span 2;
+}
+
+.formulario__mensaje{
+    height: 45px;
+    line-height: 45px;
+    background-color: rgb(250, 51, 51);
+    padding: 0 16px;
+    border-radius: 3px;
+    display: none;
+}
+
+.formulario__mensaje-activo{
+    display: block;
+}
+
+/* este es para que lo escrito este centrado en la caja de formulario__mensaje */
+.formulario__mensaje p{
+    margin: 0;
+}
+
+.formulario__grupo-btn-enviar{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+
+}
+
+.formulario__btn{
+    height: 45px;
+    line-height: 45px;
+    width: 30%;
+    background-color:black;
+    color: white;
+    font-weight: bold;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: .3s ease all;
+}
+
+.formulario__btn:hover{
+    box-shadow: 3px 0px 30px rgb(126, 125, 125) ;
+}
+
+
+.formulario__mensaje-exito{
+    font-size: 15px;
+    color:rgb(0, 204, 0);
+    display: none;
+}
+
+.formulario__mensaje-exito-activo{
+    display: block;
+}
+
+
+/* estilos para la validacion */
+
+.formulario__grupo-correcto .formulario__validacion-estado{
+    color:rgb(0, 204, 0);
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__label{
+    color:rgb(204, 0, 0);
+}
+
+.formulario__grupo-incorrecto .formulario__validacion-estado{
+    color:rgb(204, 0, 0);
+    opacity: 1;
+}
+
+.formulario__grupo-incorrecto .formulario__input{
+    border: 3px solid rgb(204,0,0);
+}
+
+@media screen and (max-width:800px){
+    .formulario{
+        grid-template-columns: 1fr;
+    }
+
+    .formulario__grupo-terminos,
+    .formulario__mensaje,
+    .formulario__grupo-btn-enviar{
+        /* al colocar el grid-column: 1 se puede hacer el breakpont de manera correcta. */
+        grid-column: 1;
+    }
+
+    .formulario__label:last-child{
+        text-align: center;
+    }
+
+    .formulario__btn{
+        width: 100%;
+    }
+}

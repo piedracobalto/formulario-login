@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/normalize.css">
+    <link rel="stylesheet" href="styles/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Menu De Registro</title>
+</head>
+<body>
+    <div class="container">
+        <form action="" class="formulario" id="formulario">
+
+            <!-- Grupo usuario -->
+            <div class="formulario__grupo" id="grupo__usuario">
+                <label for="usuario" class="formulario__label">Usuario</label>
+                <div class="formulario__grupo--input">
+                    <input type="text" class="formulario__input" name="usuario" id="usuario" placeholder="pablo43">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El usuario tiene que ser de 4 a 16 caracteres y solo puede contener numeros, letras y guion bajo.</p>
+            </div>
+
+            <!-- Grupo nombre -->
+            <div class="formulario__grupo" id="grupo__nombre">
+                <label for="nombre" class="formulario__label">Nombre</label>
+                <div class="formulario__grupo--input">
+                    <input type="text" class="formulario__input" name="nombre" id="nombre" placeholder="Pablo">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El nombre tiene que solo puede contener letras.</p>
+            </div>
+
+            <!-- Grupo apellido -->
+            <div class="formulario__grupo" id="grupo__apellido">
+                <label for="apellido" class="formulario__label">Apellido</label>
+                <div class="formulario__grupo--input">
+                    <input type="text" class="formulario__input" name="apellido" id="apellido" placeholder="Martinez">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">El apellido tiene que solo puede contener letras.</p>
+            </div>
+
+            <!-- Grupo contrasenia1 -->
+            <div class="formulario__grupo" id="grupo__contrasenia1">
+                <label for="contrasenia1" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo--input">
+                    <input type="password" class="formulario__input" name="contrasenia1" id="contrasenia1" autocomplete="off">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">La contraseña tiene que contener entre 4 a 16 caracteres y  .</p>
+            </div>
+
+            <!-- Grupo contrasenia2 -->
+            <div class="formulario__grupo" id="grupo__contrasenia2">
+                <label for="contrasenia2" class="formulario__label">Contraseña</label>
+                <div class="formulario__grupo--input">
+                    <input type="password" class="formulario__input" name="contrasenia2" id="contrasenia2" autocomplete="off">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Ambas contraseñas deben ser iguales.</p>
+            </div>
+
+            <!-- Grupo email -->
+            <div class="formulario__grupo" id="grupo__email">
+                <label for="email" class="formulario__label">Email</label>
+                <div class="formulario__grupo--input">
+                    <input type="email" class="formulario__input" name="email" id="email" placeholder="nombre@email.com">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Debes poner una cuenta de email.</p>
+            </div>
+
+            <!-- Grupo telefono -->
+            <div class="formulario__grupo" id="grupo__telefono">
+                <label for="telefono" class="formulario__label">Telefono</label>
+                <div class="formulario__grupo--input">
+                    <input type="tel" class="formulario__input" name="telefono" id="telefono" placeholder="123456789">
+                <i class="formulario__validacion-estado fa fa-times-circle"></i>
+                </div>
+                <p class="formulario__input-error">Debes poner solo numeros y debe tener un maximo de 14 digitos.</p>
+            </div>
+
+            <!-- Grupo Terminos y condiciones -->
+            <div class="formulario__terminos" id="grupo__terminos">
+                <label class="formulario__label">
+                    <input class="formulario__checkbox" type="checkbox" name="terminos" id="terminos">
+                    Acepto los Terminos y Condiciones.
+                </label>
+            </div>
+
+            <div class="formulario__mensaje" id="formulario__mensaje">
+                <p><i class="fa fa-exclamation-triangle"></i> <b>Error:</b> Por favor rellene el formulario correctamente!</p> 
+            </div>
+
+            <div class="formulario__grupo formulario__grupo-btn-enviar">
+                <button type="submit" class="formulario__btn">Enviar</button>
+                <p class="formulario__mensaje-exito" id="formulario__mensaje-exito">Formulario enviado correctamente!!</p>
+            </div>
+        
+        </form>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
